@@ -37,7 +37,7 @@ describe('todo test suite', () => {
     });
 
     test("checking update_todo",()=>{
-        a={"id":4,"title": "T4","description": "new desc","done": true}
+        a={"id":1,"title": "T1","description": "new desc","done": true}
         todo_service.update_todo(a['id'],a);
         expect(todo_service.get_todos().todo.filter(x => x['id'] == a['id'])[0]).toEqual(a);
     });
