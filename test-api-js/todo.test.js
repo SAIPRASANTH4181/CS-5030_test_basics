@@ -28,6 +28,13 @@ describe('todo test suite', () => {
         }
         expect(todo_service.add_todo(a).todo.length).toEqual(4);
     });
+
+    test("checking delete todo",()=>{
+        x=todo_service.get_todos().todo.length;
+        c=Math.floor(Math.random() * (x)) + 1;
+        todo_service.delete_todo(c);
+        expect(todo_service.get_todos().todo.find(x => x['id'] == c)).toBe(undefined);
+    });
     
 
     // Write all your test cases here that corresponds to software requirements
