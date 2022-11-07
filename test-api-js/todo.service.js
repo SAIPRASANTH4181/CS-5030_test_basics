@@ -49,11 +49,11 @@ class todoservice{
     
     update_todo(id, todo){
         // Your code here
-        if(id > 0)
-        {
-            this.todo_data['todo'][id-1] = todo;
+          let todo_index = this.todo_data['todo'].findIndex((x => x['id'] == id));
+
+            this.todo_data['todo'][todo_index] = todo;
             this.todos=this.todo_data;
-        }
+        
         return this.todos; 
     }
 }
